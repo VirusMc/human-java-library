@@ -8,10 +8,10 @@ import java.util.ArrayList;
 
 /** Repräsentation eines Namens für lebende Wesen.
  *
- * @version 1.2.0
+ * @version 1.0.1
  *
  * @author VirusMc
- * @since 1.2.0
+ * @since 1.0.1
  */
 @Data
 @AllArgsConstructor
