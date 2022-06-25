@@ -1,16 +1,30 @@
 package de.virusmc.humanexperiment.common;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import net.datafaker.Faker;
 
 import java.util.ArrayList;
-import java.util.List;
 
+/** Repräsentation eines Namens für lebende Wesen.
+ *
+ * @version 1.2.0
+ *
+ * @author VirusMc
+ * @since 1.2.0
+ */
 @Data
+@AllArgsConstructor
 public class Name {
     String first;
     ArrayList<String> middles;
     String last;
+
+    public Name(String first, String last){
+        this.first = first;
+        this.middles = new ArrayList<>();
+        this.last = last;
+    }
 
     public Name(String last) {
         Faker faker = new Faker();
@@ -38,11 +52,11 @@ public class Name {
         this.last = faker.name().lastName();
     }
 
-    public String fullName(){
+    public String fullName() {
         StringBuilder sb = new StringBuilder();
         sb.append(first).append(" ");
 
-        for (String middle: middles) {
+        for (String middle : middles) {
             sb.append(middle).append(" ");
         }
 
