@@ -6,11 +6,11 @@ import net.datafaker.Faker;
 
 import java.util.ArrayList;
 
-/** Repräsentation eines Namens für lebende Wesen.
- *
- * @version 1.0.1
+/**
+ * Repräsentation eines Namens für lebende Wesen.
  *
  * @author VirusMc
+ * @version 1.0.1
  * @since 1.0.1
  */
 @Data
@@ -20,7 +20,7 @@ public class Name {
     ArrayList<String> middles;
     String last;
 
-    public Name(String first, String last){
+    public Name(String first, String last) {
         this.first = first;
         this.middles = new ArrayList<>();
         this.last = last;

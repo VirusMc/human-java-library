@@ -5,11 +5,11 @@ import de.virusmc.humanexperiment.common.Name;
 import lombok.Builder;
 import lombok.Data;
 
-/** Repräsentiert einen Menschen
- *
- * @version 1.0.1
+/**
+ * Repräsentiert einen Menschen
  *
  * @author VirusMc
+ * @version 1.0.1
  * @since 1.0.1
  */
 @Data
