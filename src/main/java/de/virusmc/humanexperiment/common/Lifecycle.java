@@ -6,11 +6,11 @@ import lombok.Data;
 import java.time.Instant;
 import java.util.Date;
 
-/** Repräsentiert die Daten der Geburt und den Tod eines Wesens
- *
- * @version 1.0.1
+/**
+ * Repräsentiert die Daten der Geburt und den Tod eines Wesens
  *
  * @author VirusMc
+ * @version 1.0.1
  * @since 1.0.1
  */
 @Data
@@ -20,12 +20,23 @@ public class Lifecycle {
     private Date birthday;
     private Date dateOfDeath;
 
+    public Lifecycle() {
+        birthday = new Date(Instant.now().toEpochMilli());
+        dateOfDeath = null;
+    }
 
-    /** Lässt das Wesen sterben
+    public Lifecycle(Date birthday) {
+        this.birthday = birthday;
+        this.dateOfDeath = null;
+    }
+
+
+    /**
+     * Lässt das Wesen sterben
      *
-     * @since 1.0.1
-     * @author VirusMc
      * @return Ob das Sterben erfolgreich war
+     * @author VirusMc
+     * @since 1.0.1
      */
     public boolean passAway() {
         if (isDead()) return false;
@@ -34,11 +45,12 @@ public class Lifecycle {
         return true;
     }
 
-    /** Überprüft, ob das Wesen tot ist
+    /**
+     * Überprüft, ob das Wesen tot ist
      *
-     * @since 1.0.1
-     * @author VirusMc
      * @return Ob das Wesen tot ist
+     * @author VirusMc
+     * @since 1.0.1
      */
     public boolean isDead() {
         return dateOfDeath != null;
