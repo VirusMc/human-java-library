@@ -18,4 +18,5 @@ public class Human {
 
     private Name name;
     private Lifecycle lifecycle;
+    private Education education;
 }
