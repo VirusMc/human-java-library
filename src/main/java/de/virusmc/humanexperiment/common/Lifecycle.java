@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import java.time.Instant;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -30,6 +31,11 @@ public class Lifecycle {
         this.dateOfDeath = null;
     }
 
+    public int age(){
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(new Date(new Date(Instant.now().toEpochMilli()).compareTo(birthday)));
+        return calendar.get(Calendar.YEAR);
+    }
 
     /**
      * Lässt das Wesen sterben
